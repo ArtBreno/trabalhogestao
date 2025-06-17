@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro com Senha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 0.8em;
+        }
+        .success {
+            color: green;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cadastro de Usuário</h2>
+    <form id="cadastroForm">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha (mínimo 6 caracteres):</label>
+            <input type="password" id="senha" required minlength="6">
+            <div id="senhaError" class="error"></div>
+        </div>
+        <div class="form-group">
+            <label for="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" id="confirmarSenha" required>
+            <div id="confirmarSenhaError" class="error"></div>
+        </div>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <div id="mensagemSucesso" class="success"></div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Limpar mensagens de erro anteriores
+            document.getElementById('senhaError').textContent = '';
+            document.getElementById('confirmarSenhaError').textContent = '';
+            document.getElementById('mensagemSucesso').textContent = '';
+            
+            // Obter valores dos campos
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmarSenha').value;
+            
+            // Validar senha
+            let valido = true;
+            
+            if (senha.length < 6) {
+                document.getElementById('senhaError').textContent = 'A senha deve ter pelo menos 6 caracteres.';
+                valido = false;
+            }
+            
+            if (senha !== confirmarSenha) {
+                document.getElementById('confirmarSenhaError').textContent = 'As senhas não coincidem.';
+                valido = false;
+            }
+            
+            // Se tudo estiver válido, "cadastrar" (neste exemplo, apenas mostra mensagem)
+            if (valido) {
+                document.getElementById('mensagemSucesso').textContent = `Cadastro realizado com sucesso para ${nome}!`;
+                // Aqui você poderia adicionar código para enviar os dados para um servidor
+                // Exemplo: fetch('/cadastro', { method: 'POST', body: JSON.stringify({ nome, email, senha }) });
+                
+                // Limpar o formulário (opcional)
+                document.getElementById('cadastroForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>
