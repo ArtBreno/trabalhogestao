@@ -1,0 +1,204 @@
+
+        /* cadastro.css */
+
+/* Estilos gerais consistentes com o index.php */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #dfb987;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 60px; /* Espaço para o footer */
+}
+
+
+
+/* Container do formulário centralizado */
+.cadastro-container {
+    max-width: 500px;
+    
+    width: 90%;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgb(233, 188, 138);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.cadastro-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #cca078, #ecb874);
+}
+
+.cadastro-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cadastro-header h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.cadastro-header p {
+    color: #666;
+    font-size: 16px;
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Estilos do formulário */
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #444;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group i {
+    color: #aa764c;
+    font-size: 18px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px 18px;
+    padding-left: 45px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.form-control:focus {
+    border-color: #2575fc;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(37, 117, 252, 0.2);
+    background-color: white;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 42px;
+    color: #777;
+    font-size: 18px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #d3b281 0%, #daab64 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(207, 115, 78, 0.3);
+    margin-top: 20px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.login-link a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+    color: #d6c8ad;
+}
+
+/* Estilos do footer - mantendo o mesmo do index */
+footer {
+    background: linear-gradient(135deg, #c0ab70 0%, #d3b36e 100%);
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    margin: 0 15px;
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+}
+/* Adicione no final do arquivo */
+.sucesso {
+    color: green;
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.erro {
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+}
